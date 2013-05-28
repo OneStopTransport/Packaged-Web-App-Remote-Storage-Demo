@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>remoteStorageDemo</title>
+	</head>
+	<body>
+		 <div id="remotestorage-connect"></div>
+		<h1>My locations</h1>
+		<p id="connect">
+		  Please connect your remotestorage (get one at <a href="https://heahdk.net/">https://heahdk.net/</a>)
+		 </p>
+		<p>Finding your location: <span id="status">checking...</span></p>
+		<form id="add-location-form">
+			<p id="current-coords">-</p>
+			<button id="add-location" type="submit" value="add-location">Add location</button>
+		</form>
+		
+		<br>
+		<div style="background:#000;">
+			<div style="color:#fff;padding:7px">Your previous locations:</div>
+		</div>
+		<div style="background:#000;opacity:0.6;filter:alpha(opacity=60);padding:7px 0 0 7px">
+			<div style="color:#999;display:block">
+				<ul id="location-list"></ul>
+			</div>
+		</div>
+	</body>
+	
+	<script src="js/remotestorage.js"></script>
+	<script src="js/locations.js"></script>
+	<script src="js/application.js"></script>
+	
+	<script>
+	
+	if (navigator.geolocation) {
+	  navigator.geolocation.getCurrentPosition(success, error);
+	} else {
+	  error('not supported');
+	}
+	
+	function success(position) {
+		//location status placeholder
+		var status = document.getElementById('status');
+	  	//add location button
+		var button = document.getElementById('add-location');
+		//current coordinates
+		var current_coords = document.getElementById('current-coords');
+	
+		status.innerHTML = "found you!";
+	
+		//5 decimal places is an acceptable accuracy for the locations
+		lat = position.coords.latitude.toFixed(5);
+		lon = position.coords.longitude.toFixed(5);
+		button.style.visibility = "visible"
+		current_coords.innerHTML = 'Lat:'+ lat+' Lon:'+lon;
+		coords = {'lat': lat , 'lon': lon};
+	
+		console.log("position");
+		console.log(coords);
+
+	}
+	
+	function error(msg) {
+		var status = document.getElementById('status');
+		status.innerHTML = typeof msg == 'string' ? msg : "failed";
+	}
+	
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script src="https://www.ost.pt/js/apps/app-container.js?remotestorage-demo"></script>
+</html>
