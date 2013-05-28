@@ -27,14 +27,10 @@ You need to have an account on the [OST]((https://www.ost.pt) platform [set as d
 
 ##What is remoteStorage?
 
-	remoteStorage.js is a JavaScript library, used to 
-	enable users of unhosted web apps (JavaScript apps 
-	running in a browser) to store their data at a place 
-	of their choice (their “remoteStorage” server).  It 
-	tries to get in the way of app developers as little 
-	as possible, while providing the easiest path for 
-	both developers and users to integrate their storage 
-	with apps.
+	remoteStorage.js is a JavaScript library, used to enable users of unhosted web apps (JavaScript apps 
+	running in a browser) to store their data at a place of their choice (their “remoteStorage” server).  It 
+	tries to get in the way of app developers as little  as possible, while providing the easiest path for 
+	both developers and users to integrate their storage with apps.
 
 from [http://remotestoragejs.com/doc/code/files2/overview-txt.html]()
 
