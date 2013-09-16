@@ -1,7 +1,7 @@
 Packaged-Web-App-Remote-Storage-Demo
 ====================================
 
-This repository contains Packageed Web App with Remote Storage integration with remoteStorage.js.
+This repository contains Packaged Web App with Remote Storage integration with remoteStorage.js.
 
 It was based in the [minimal example](https://github.com/remotestorage/remotestorage.js/blob/master/example/minimal-head/index.html) and [My Favourite Drinks](https://myfavoritedrinks.5apps.com/) provided at [remotestorage.io](http://remotestorage.io/).
 
